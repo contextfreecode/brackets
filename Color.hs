@@ -16,7 +16,8 @@ hsvToRgb (Hsv h s v) = rgb
     h1 = h * 6
     x = c * (1 - (abs $ (mod' h1 2) - 1))
     rgb1 =
-      if  | h1 < 1 -> Rgb c x 0
+      if
+          | h1 < 1 -> Rgb c x 0
           | h1 < 2 -> Rgb x c 0
           | h1 < 3 -> Rgb 0 c x
           | h1 < 4 -> Rgb 0 x c
