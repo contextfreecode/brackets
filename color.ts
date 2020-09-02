@@ -1,18 +1,8 @@
-interface Color3 {
-  kind: "hsv" | "rgb";
-  value: [number, number, number];
-}
-
-type Color =
-  | { kind: "hsv"; h: number; s: number; v: number }
-  | { kind: "named"; name: string }
-  | { kind: "rgb"; r: number; g: number; b: number };
-
-interface Colorable {
+interface Color {
   toRgb(): Rgb;
 }
 
-class Hsv implements Colorable {
+class Hsv implements Color {
   constructor(h: number, s: number, v: number) {
     this.h = h;
     this.s = s;
@@ -41,7 +31,7 @@ class Hsv implements Colorable {
   }
 }
 
-class NamedColor implements Colorable {
+class NamedColor implements Color {
   constructor(name: string) {
     this.name = name;
   }
@@ -53,7 +43,7 @@ class NamedColor implements Colorable {
   }
 }
 
-class Rgb implements Colorable {
+class Rgb implements Color {
   constructor(r: number, g: number, b: number) {
     this.r = r;
     this.g = g;
@@ -76,7 +66,7 @@ const namedColors: { [name: string]: Rgb } = {
 };
 
 function main() {
-  let colors: Colorable[] = [
+  let colors: Color[] = [
     new Hsv(1, 1, 1),
     new NamedColor("yellow"),
     new Rgb(0, 0, 1),
