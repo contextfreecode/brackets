@@ -13,7 +13,7 @@ function darken({ r, g, b }: Rgb): Rgb {
 }
 
 // Pretend I deep froze this or something.
-const namedColors: { [name: string]: Rgb } = {
+const namedColors: Record<string, Rgb> = {
   red: rgbOf(1, 0, 0),
   yellow: rgbOf(1, 1, 0),
   blue: rgbOf(0, 0, 1),
