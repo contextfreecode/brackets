@@ -20,11 +20,11 @@
   (let* ([names #(red yellow blue)]
          [rgbs (vector-map ((curry hash-ref) named-colors) names)]
          [darks (vector-map darken rgbs)])
+    ; zip?
     (for ([i (in-range (vector-length names))])
-      (displayln (string-join (map ~v (list
-        (vector-ref names i)
-        (vector-ref rgbs i)
-        (vector-ref darks i))))))))
+      (displayln (string-join (map
+        (lambda (vec) (~v (vector-ref vec i)))
+        (list names rgbs darks)))))))
   ;;; (define names #(red yellow blue))
   ;;; (define rgbs (vector-map ((curry hash-ref) named-colors) names))
   ;;; (println names)
