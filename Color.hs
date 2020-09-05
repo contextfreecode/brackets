@@ -21,6 +21,7 @@ namedColors =
     ]
 
 main = do
+  -- Should really be using Maybe lookup on named colors.
   let names = V.fromList ["red", "yellow", "blue"]
       rgbs = V.map (namedColors Map.!) names
       darks = V.map darken rgbs

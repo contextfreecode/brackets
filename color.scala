@@ -16,7 +16,7 @@ val NamedColors = Map(
 
 @main def color = {
   val names = Vector[String]("red", "yellow", "blue")
-  val rgbs = names.map(name => NamedColors(name))
+  val rgbs = names.map(NamedColors(_))
   val darks = rgbs.map(darken)
   for (i <- 0 until names.length) {
     println(s"${names(i)} ${rgbs(i)} ${darks(i)}")
