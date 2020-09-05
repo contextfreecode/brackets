@@ -8,8 +8,8 @@ function darken({ r, g, b }: Rgb): Rgb {
   let scale = 0.5;
   return rgbOf(scale * r, scale * g, scale * b);
   // TS 4.1 should allow for TupleN types.
-  // let scaled = [r, g, b].map((x) => scale * x) as [Item, Item, Item];
-  // return rgbOf.apply(null, scaled);
+  // type Num3 = [number, number, number];
+  // return rgbOf(...([r, g, b].map((x) => scale * x) as Num3));
 }
 
 // Pretend I deep froze this or something.

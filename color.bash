@@ -1,8 +1,8 @@
 darken() {
   scale=0.5
   gap=""
-  for value in "$@"; do
-    dark=$(echo "$scale * $value" | bc | sed 's/^\./0./')
+  for x in "$@"; do
+    dark=$(echo "$scale * $x" | bc | sed 's/^\./0./')
     printf "$gap$dark"
     gap=" "
   done
