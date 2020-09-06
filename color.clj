@@ -16,7 +16,7 @@
         rgbs (into [] (map (partial get named-colors) names))
         darks (into [] (map darken rgbs))]
     (doseq [i (range (count names))]
-      (apply println (map #(get % i) [names rgbs darks])))))
-      ; (println (get names i) (get rgbs i) (get darks i)))))
+      (println (get names i) (get rgbs i) (get darks i)))))
+      ; (apply println (map #(get % i) [names rgbs darks])))))
 
 (main)

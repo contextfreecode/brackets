@@ -9,10 +9,11 @@ import qualified Data.Vector as V
 
 data Rgb = Rgb {r, g, b :: Double} deriving (Show)
 
+scaleBy :: Double -> Rgb -> Rgb
+scaleBy scale Rgb {r, g, b} = Rgb (scale * r) (scale * g) (scale * b)
+
 darken :: Rgb -> Rgb
-darken Rgb {r, g, b} =
-  let scale = 0.5
-   in Rgb (scale * r) (scale * g) (scale * b)
+darken = scaleBy 0.5
 
 namedColors :: Map.Map String Rgb
 namedColors =

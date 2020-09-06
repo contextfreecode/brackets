@@ -4,10 +4,10 @@
 template<typename Item>
 struct Grid {
   // auto operator[](int i, int j) -> Item& {
-  //   return values[i][j];
+  //   return values.at(i).at(j);
   // }
   auto operator()(int i, int j) -> Item& {
-    return values[i][j];
+    return values.at(i).at(j);
   }
   // Super inefficient nested vectors.
   std::vector<std::vector<Item>> values;
