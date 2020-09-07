@@ -13,12 +13,8 @@ struct Grid {
   std::vector<std::vector<Item>> values;
 };
 
-// g++ -std=c++17 -o color color.cpp && ./color
-// g++ -std=c++20 -o color color.cpp && ./color
-
 auto main() -> int {
   int values[][2] = {{0, 1}, {2, 3}};
-  // http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1161r3.html
   std::cout << values[1, 1] << std::endl;
   auto grid = Grid<int>{{{0, 1}, {2, 3}}};
   // grid(1, 1) = 9;

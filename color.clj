@@ -5,6 +5,7 @@
 (defn darken [{:keys [r g b]}]
   (let [scale 0.5]
     (apply ->Rgb (map #(* scale %) [r g b]))))
+    ; (Rgb. (* scale r) (* scale g) (* scale b))))
 
 (def ^:const named-colors
   {:red (Rgb. 1.0 0.0 0.0)
