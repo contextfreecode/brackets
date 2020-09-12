@@ -10,7 +10,8 @@ import qualified Data.Vector as V
 data Rgb = Rgb {r, g, b :: Double} deriving (Show)
 
 scaleBy :: Double -> Rgb -> Rgb
-scaleBy scale Rgb {r, g, b} = Rgb (scale * r) (scale * g) (scale * b)
+scaleBy scale Rgb {r, g, b} =
+  Rgb (scale * r) (scale * g) (scale * b)
 
 darken :: Rgb -> Rgb
 darken = scaleBy 0.5

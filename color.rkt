@@ -19,10 +19,15 @@
   (let* ([names #(red yellow blue)]
          [rgbs (vector-map ((curry hash-ref) named-colors) names)]
          [darks (vector-map darken rgbs)])
-    ; Zip might probably be better here.
+    ; Zip might be better here.
     (for ([i (in-range (vector-length names))])
-      (displayln (string-join (map
-        (lambda (vec) (~v (vector-ref vec i)))
-        (list names rgbs darks)))))))
+      (printf "~v ~v ~v~n"
+        (vector-ref names i)
+        (vector-ref rgbs i)
+        (vector-ref darks i)))))
+      ; Alternatively, map through vector-ref, stringify, and join.
+      ; (displayln (string-join (map
+      ;   (lambda (vec) (~v (vector-ref vec i)))
+      ;   (list names rgbs darks)))))))
 
 (main)
