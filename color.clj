@@ -14,10 +14,10 @@
 
 (defn main []
   (let [names [:red :yellow :blue]
-        rgbs (into [] (map (partial get named-colors) names))
+        rgbs (into [] (map named-colors names))
         darks (into [] (map darken rgbs))]
     (doseq [i (range (count names))]
-      (println (get names i) (get rgbs i) (get darks i)))))
-      ; (apply println (map #(get % i) [names rgbs darks])))))
+      (println (names i) (rgbs i) (darks i)))))
+      ; (apply println (map #(% i) [names rgbs darks])))))
 
 (main)
